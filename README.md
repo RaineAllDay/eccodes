@@ -32,6 +32,11 @@ With my update the output is:
 ]}
 ```
 
+### Known Bugs
+[Issue #3](https://github.com/RaineAllDay/eccodes/issues/3) - Not all BUFR files are dumping correctly. BUFR seems to be a very dynamicly structured file, and can cause issues with outputs in the current strucuture. May need to setup logic specifically for bufr outputs. 
+
+Original Readme
+=======
 [![Linux & macOS: master](https://img.shields.io/github/actions/workflow/status/ecmwf/eccodes/ci.yml?branch=master&label=Linux%20%26%20MacOS%3A%20master)](https://github.com/ecmwf/eccodes/actions/workflows/ci.yml?query=branch%3Amaster)
 [![Linux & macOS: develop](https://img.shields.io/github/actions/workflow/status/ecmwf/eccodes/ci.yml?branch=develop&label=Linux%20%26%20MacOS%3A%20develop)](https://github.com/ecmwf/eccodes/actions/workflows/ci.yml?query=branch%3Adevelop)
 
