@@ -155,19 +155,19 @@ static void dump_values(grib_dumper* d, grib_accessor* a)
         if(accessor_depth > 0){
             fprintf(self->dumper.out, "%-*s{", depth, " ");
             depth += 2;
-            fprintf(self->dumper.out, "\n%-*s\"key\" : \"%s\",", depth, " ", a->name);
-            fprintf(self->dumper.out, "\n%-*s\"value\" : ", depth, " ");
+            fprintf(self->dumper.out, "\n%-*s\"key\":\"%s\",", depth, " ", a->name);
+            fprintf(self->dumper.out, "\n%-*s\"value\":", depth, " ");
         } else {
             fprintf(self->dumper.out, "%-*s", depth, " ");
-            fprintf(self->dumper.out, "\"%s\" : ", a->name);
+            fprintf(self->dumper.out, "\"%s\":", a->name);
         }
     }
-    if(a->attributes[0] != NULL && self->isAttribute == 0) {
+    if(a->attributes[0] != NULL) {
         // depth += 2;
         fprintf(self->dumper.out, "%-*s{", depth, " ");
         depth += 2;
-        fprintf(self->dumper.out, "\n%-*s\"key\" : \"%s\",", depth, " ", a->name);
-        fprintf(self->dumper.out, "\n%-*s\"value\" : ", depth, " ");
+        fprintf(self->dumper.out, "\n%-*s\"key\":\"%s\",", depth, " ", a->name);
+        fprintf(self->dumper.out, "\n%-*s\"value\":", depth, " ");
     }
     err = grib_set_double(h, "missingValue", missing_value);
     if (size > 1) {
@@ -212,7 +212,7 @@ static void dump_values(grib_dumper* d, grib_accessor* a)
                 fprintf(self->dumper.out, "\n%-*s}", depth, " ");
             }
         }
-        if(a->attributes[0] != NULL && self->isAttribute == 0){
+        if(a->attributes[0] != NULL){
             depth -= 2;
             fprintf(self->dumper.out, "\n%-*s}", depth, " ");
             //depth -= 2;
@@ -259,19 +259,19 @@ static void dump_long(grib_dumper* d, grib_accessor* a, const char* comment)
         if(accessor_depth > 0){
             fprintf(self->dumper.out, "%-*s{", depth, " ");
             depth += 2;
-            fprintf(self->dumper.out, "\n%-*s\"key\" : \"%s\",", depth, " ", a->name);
-            fprintf(self->dumper.out, "\n%-*s\"value\" : ", depth, " ");
+            fprintf(self->dumper.out, "\n%-*s\"key\":\"%s\",", depth, " ", a->name);
+            fprintf(self->dumper.out, "\n%-*s\"value\":", depth, " ");
         } else {
             fprintf(self->dumper.out, "%-*s", depth, " ");
-            fprintf(self->dumper.out, "\"%s\" : ", a->name);
+            fprintf(self->dumper.out, "\"%s\":", a->name);
         }
     }
-    if(a->attributes[0] != NULL && self->isAttribute == 0) {
+    if(a->attributes[0] != NULL) {
         // depth += 2;
         fprintf(self->dumper.out, "%-*s{", depth, " ");
         depth += 2;
-        fprintf(self->dumper.out, "\n%-*s\"key\" : \"%s\",", depth, " ", a->name);
-        fprintf(self->dumper.out, "\n%-*s\"value\" : ", depth, " ");
+        fprintf(self->dumper.out, "\n%-*s\"key\":\"%s\",", depth, " ", a->name);
+        fprintf(self->dumper.out, "\n%-*s\"value\":", depth, " ");
     }
 
     if (size > 1) {
@@ -338,7 +338,7 @@ static void dump_long(grib_dumper* d, grib_accessor* a, const char* comment)
                 fprintf(self->dumper.out, "\n%-*s}", depth, " ");
             }
         }
-        if(a->attributes[0] != NULL && self->isAttribute == 0){
+        if(a->attributes[0] != NULL){
             depth -= 2;
             fprintf(self->dumper.out, "\n%-*s}", depth, " ");
             //depth -= 2;
@@ -373,20 +373,20 @@ static void dump_double(grib_dumper* d, grib_accessor* a, const char* comment)
         if(accessor_depth > 0){
             fprintf(self->dumper.out, "%-*s{", depth, " ");
             depth += 2;
-            fprintf(self->dumper.out, "\n%-*s\"key\" : \"%s\",", depth, " ", a->name);
-            fprintf(self->dumper.out, "\n%-*s\"value\" : ", depth, " ");
+            fprintf(self->dumper.out, "\n%-*s\"key\":\"%s\",", depth, " ", a->name);
+            fprintf(self->dumper.out, "\n%-*s\"value\":", depth, " ");
         } else {
             fprintf(self->dumper.out, "%-*s", depth, " ");
-            fprintf(self->dumper.out, "\"%s\" : ", a->name);
+            fprintf(self->dumper.out, "\"%s\":", a->name);
         }
     }
 
-    if(a->attributes[0] != NULL && self->isAttribute == 0) {
+    if(a->attributes[0] != NULL) {
         // depth += 2;
         fprintf(self->dumper.out, "%-*s{", depth, " ");
         depth += 2;
-        fprintf(self->dumper.out, "\n%-*s\"key\" : \"%s\",", depth, " ", a->name);
-        fprintf(self->dumper.out, "\n%-*s\"value\" : ", depth, " ");
+        fprintf(self->dumper.out, "\n%-*s\"key\":\"%s\",", depth, " ", a->name);
+        fprintf(self->dumper.out, "\n%-*s\"value\":", depth, " ");
     }
 
     if (grib_is_missing_double(a, value))
@@ -404,7 +404,7 @@ static void dump_double(grib_dumper* d, grib_accessor* a, const char* comment)
                 fprintf(self->dumper.out, "\n%-*s}", depth, " ");
             }
         }
-        if(a->attributes[0] != NULL && self->isAttribute == 0){
+        if(a->attributes[0] != NULL){
             depth -= 2;
             fprintf(self->dumper.out, "\n%-*s}", depth, " ");
             //depth -= 2;
@@ -442,19 +442,19 @@ static void dump_string_array(grib_dumper* d, grib_accessor* a, const char* comm
         if(accessor_depth > 0){
             fprintf(self->dumper.out, "%-*s{", depth, " ");
             depth += 2;
-            fprintf(self->dumper.out, "\n%-*s\"key\" : \"%s\",", depth, " ", a->name);
-            fprintf(self->dumper.out, "\n%-*s\"value\" : ", depth, " ");
+            fprintf(self->dumper.out, "\n%-*s\"key\":\"%s\",", depth, " ", a->name);
+            fprintf(self->dumper.out, "\n%-*s\"value\":", depth, " ");
         } else {
             fprintf(self->dumper.out, "%-*s", depth, " ");
             fprintf(self->dumper.out, "\"%s\":", a->name);
         }
     }
-    if(a->attributes[0] != NULL && self->isAttribute == 0) {
+    if(a->attributes[0] != NULL) {
         // depth += 2;
         fprintf(self->dumper.out, "%-*s{", depth, " ");
         depth += 2;
-        fprintf(self->dumper.out, "\n%-*s\"key\" : \"%s\",", depth, " ", a->name);
-        fprintf(self->dumper.out, "\n%-*s\"value\" : ", depth, " ");
+        fprintf(self->dumper.out, "\n%-*s\"key\":\"%s\",", depth, " ", a->name);
+        fprintf(self->dumper.out, "\n%-*s\"value\":", depth, " ");
     }
 
     self->empty = 0;
@@ -491,7 +491,7 @@ static void dump_string_array(grib_dumper* d, grib_accessor* a, const char* comm
                 fprintf(self->dumper.out, "\n%-*s}", depth, " ");
             }
         }
-        if(a->attributes[0] != NULL && self->isAttribute == 0){
+        if(a->attributes[0] != NULL){
             //depth -= 2;
             depth -= 2;
             fprintf(self->dumper.out, "\n%-*s}", depth, " ");
@@ -563,19 +563,19 @@ static void dump_string(grib_dumper* d, grib_accessor* a, const char* comment)
         if(accessor_depth > 0){
             fprintf(self->dumper.out, "%-*s{", depth, " ");
             depth += 2;
-            fprintf(self->dumper.out, "\n%-*s\"key\" : \"%s\",", depth, " ", a->name);
-            fprintf(self->dumper.out, "\n%-*s\"value\" : ", depth, " ");
+            fprintf(self->dumper.out, "\n%-*s\"key\":\"%s\",", depth, " ", a->name);
+            fprintf(self->dumper.out, "\n%-*s\"value\":", depth, " ");
         } else {
             fprintf(self->dumper.out, "%-*s", depth, " ");
             fprintf(self->dumper.out, "\"%s\":", a->name);
         }
     }
-    if(a->attributes[0] != NULL && self->isAttribute == 0) {
+    if(a->attributes[0] != NULL) {
         // depth += 2;
         fprintf(self->dumper.out, "%-*s{", depth, " ");
         depth += 2;
-        fprintf(self->dumper.out, "\n%-*s\"key\" : \"%s\",", depth, " ", a->name);
-        fprintf(self->dumper.out, "\n%-*s\"value\" : ", depth, " ");
+        fprintf(self->dumper.out, "\n%-*s\"key\":\"%s\",", depth, " ", a->name);
+        fprintf(self->dumper.out, "\n%-*s\"value\":", depth, " ");
     }
     if (is_missing)
         fprintf(self->dumper.out, "%s", "null");
@@ -591,7 +591,7 @@ static void dump_string(grib_dumper* d, grib_accessor* a, const char* comment)
                 fprintf(self->dumper.out, "\n%-*s}", depth, " ");
             }
         }
-        if(a->attributes[0] != NULL && self->isAttribute == 0){
+        if(a->attributes[0] != NULL){
             depth -= 2;
             fprintf(self->dumper.out, "\n%-*s}", depth, " ");
            // depth -= 2;
@@ -633,19 +633,17 @@ static void dump_section(grib_dumper* d, grib_accessor* a, grib_block_of_accesso
             fprintf(self->dumper.out, ",\n");
         fprintf(self->dumper.out, "%-*s", depth, " ");
         if(accessor_depth == 0){
-            fprintf(self->dumper.out, "\"data\" : [");
+            fprintf(self->dumper.out, "\"data\":[");
         } else {
             fprintf(self->dumper.out, "[");
         }
         depth += 2;     
         fprintf(self->dumper.out, "\n");
-        
+        accessor_depth = 1;
         /* fprintf(self->dumper.out,"%-*s",depth," "); */
         self->begin = 1;
         self->empty = 1;
-        accessor_depth++;
         grib_dump_accessors_block(d, block);
-        accessor_depth--;
         fprintf(self->dumper.out, "\n");
         depth -= 2;
         fprintf(self->dumper.out, "%-*s", depth, " ");
@@ -672,7 +670,7 @@ static void dump_attributes(grib_dumper* d, grib_accessor* a)
         self->isLeaf = a->attributes[i]->attributes[0] == NULL ? 1 : 0;
         fprintf(self->dumper.out, ",");
         fprintf(self->dumper.out, "\n%-*s", depth, " ");
-        fprintf(out, "\"%s\" : ", a->attributes[i]->name);
+        fprintf(out, "\"%s\":", a->attributes[i]->name);
         flags = a->attributes[i]->flags;
         a->attributes[i]->flags |= GRIB_ACCESSOR_FLAG_DUMP;
         switch (grib_accessor_get_native_type(a->attributes[i])) {
