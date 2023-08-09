@@ -1,6 +1,9 @@
 ecCodes
 =======
-## RaineAllDay's Changes:
+### Known Bugs
+[Issue #3](https://github.com/RaineAllDay/eccodes/issues/3) - Not all BUFR files are dumping correctly. BUFR seems to be a very dynamicly structured file, and can cause issues with outputs in the current strucuture. May need to setup logic specifically for bufr outputs. 
+
+### RaineAllDay's Changes:
 Updated grib_dump's JSON output to output traditional JSON. 
 grib_dump would previously output message data as:
 ```
@@ -31,9 +34,6 @@ With my update the output is:
   }
 ]}
 ```
-
-### Known Bugs
-[Issue #3](https://github.com/RaineAllDay/eccodes/issues/3) - Not all BUFR files are dumping correctly. BUFR seems to be a very dynamicly structured file, and can cause issues with outputs in the current strucuture. May need to setup logic specifically for bufr outputs. 
 
 Original Readme
 =======
